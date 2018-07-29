@@ -1,0 +1,30 @@
+@layout('layouts.main')
+
+@section('content')
+
+  <div class="container">
+    <h3 class="mt-5 mb-4">添加post值</h3>
+    <form action="/posts" method="POST">
+      <div class="form-group">
+        <label for="title">数据库添加title数据</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="标题预设文字预设文字"
+          name="title">
+      </div>
+      <div class="form-group">
+        <label for="content">数据库添加Content数据</label>
+        <textarea
+          name="content"
+          rows="5" cols="10"
+          class="form-control"
+          placeholder="内容预设文字"></textarea>
+      </div>
+      {{csrfField()}}
+      <button type="submit" class="btn btn-primary">提交</button>
+    </form>
+
+  </div>
+
+@endsection

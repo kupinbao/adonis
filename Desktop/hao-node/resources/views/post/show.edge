@@ -1,0 +1,22 @@
+@layout('layouts.main')
+@section('content')
+<div class="container">
+  <h1 class="mt-5 mb-4">{{post.title}}</h1>
+  <div><h3>{{post.content}}</h3></div>
+
+</div>
+<ul class="nav justify-content-end fixed-bottom pb-4">
+  <li class="nav-item">
+    <button
+    id="delete"
+    data-csrf="{{ csrfToken }}"
+    data-id="{{ post.id }}"
+    type="button" class="btn btn-danger">
+      删除
+    </button>
+  </li>
+
+</ul>
+
+
+@endsection
